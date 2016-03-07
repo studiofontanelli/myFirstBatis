@@ -9,7 +9,7 @@ import org.springframework.util.Log4jConfigurer;
 public abstract class CommonTestCase extends TestCase {
 
 	
-	public static final String LOGGER_PREFIX = "stasrv";
+	public static final String LOGGER_PREFIX = "it.studiofontanelli";
 	public static Logger log = Logger.getLogger(LOGGER_PREFIX);
 	
 	public abstract String getApplicationContext();

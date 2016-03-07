@@ -12,7 +12,13 @@
        http://www.springframework.org/schema/context/spring-context-2.0.xsd"
        >
 
+
+	<!-- DATASOURCE CONFIGURATION -->
+	<import resource="dataSourceContextTest.xml" />
 	
+	
+	<!-- MAPPER CONFIGURATION -->
+	<import resource="mapperContextTest.xml" />
 	
 	<!-- BUSINESS CONFIGURATION -->
 	<import resource="helperContextTest.xml" />
