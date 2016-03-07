@@ -9,11 +9,11 @@ import org.mybatis.generator.config.Configuration;
 import org.mybatis.generator.config.xml.ConfigurationParser;
 import org.mybatis.generator.internal.DefaultShellCallback;
 
-public class GeneratorSqlmap {
+public class GeneratorSqlSpringmap {
 
     public void generator() throws Exception{
 
-    	String fileGenerator = "generatorConfig.xml";
+    	String fileGenerator = "generatorConfigSpring.xml";
     	
     	
         List<String> warnings = new ArrayList<String>();
@@ -38,7 +38,7 @@ public class GeneratorSqlmap {
     public static void main(String[] args) throws Exception {
         try {
         	System.out.println("BEGIN");
-            GeneratorSqlmap generatorSqlmap = new GeneratorSqlmap();
+            GeneratorSqlSpringmap generatorSqlmap = new GeneratorSqlSpringmap();
             generatorSqlmap.generator();
             System.out.println("END");
         } catch (Exception e) {
