@@ -1,9 +1,11 @@
 package it.studiofontanelli.jabistudio.helper.impl;
 
+import it.studiofontanelli.jabistudio.entity.AbiDocksDock;
 import it.studiofontanelli.jabistudio.entity.AbiMainPofT;
 import it.studiofontanelli.jabistudio.entity.AbiMainPofTExample;
 import it.studiofontanelli.jabistudio.entity.AbiMainPofTExample.Criteria;
 import it.studiofontanelli.jabistudio.helper.TouchHelper;
+import it.studiofontanelli.jabistudio.mapper.AbiDocksDockMapper;
 import it.studiofontanelli.jabistudio.mapper.AbiMainPofTMapper;
 import it.studiofontanelli.jabistudio.util.Tracer;
 import it.studiofontanelli.jabistudio.util.XmlSerializer;
@@ -22,6 +24,10 @@ public class TouchHelperImpl implements TouchHelper {
 	@Autowired
 	private AbiMainPofTMapper abiMainPofTMapper;
 	
+	@Autowired
+	private AbiDocksDockMapper abiDocksDockMapper;
+	
+	
 
 	public AbiMainPofTMapper getAbiMainPofTMapper() {
 		return abiMainPofTMapper;
@@ -38,13 +44,8 @@ public class TouchHelperImpl implements TouchHelper {
 		String method  = "touch";
 		try{
 		
-		
-		
-		
 		AbiMainPofTExample example = new AbiMainPofTExample();
 		
-		
-		example.setDistinct(false);
 		Criteria criteria = example.createCriteria();
 		criteria.andTypeidEqualTo("INVOI");
 		
@@ -53,7 +54,7 @@ public class TouchHelperImpl implements TouchHelper {
 		
 		System.out.println("# " + l.size());
 		
-		Tracer.debug(log, getClass().getName(), method, "result\n " + XmlSerializer.objectToXml(l));
+		//Tracer.debug(log, getClass().getName(), method, "result\n " + XmlSerializer.objectToXml(l));
 		
 		
 		
@@ -65,6 +66,34 @@ public class TouchHelperImpl implements TouchHelper {
 		finally{
 			System.out.println("END");
 		}
+	}
+
+
+	@Override
+	public AbiDocksDock insertDock() throws Exception {
+		String method  = "insertDock";
+		AbiDocksDock dock = null;
+		try{
+		
+			 dock = new AbiDocksDock();
+		
+		
+			 int i = abiDocksDockMapper.insert(dock);
+		
+		
+			 Tracer.debug(log, getClass().getName(), method, "insert i = " + i);
+		
+		
+		
+		}
+		catch(Exception e){
+			System.out.println("Exception " + e);
+			
+		}
+		finally{
+			System.out.println("END");
+		}
+		return dock;
 	}
 
 }

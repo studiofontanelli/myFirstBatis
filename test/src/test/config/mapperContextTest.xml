@@ -19,6 +19,11 @@
 	</bean>
 
 
+<bean id="abiDocksDockMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+	  <property name="mapperInterface" value="it.studiofontanelli.jabistudio.mapper.AbiDocksDockMapper" />
+	  <property name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean>
+
 
 	
 	

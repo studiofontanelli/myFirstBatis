@@ -53,7 +53,9 @@
 		</javaClientGenerator>
 		<!-- generate code -->
 
-		<table tableName="_abi_docks_dock"></table>
+		<table tableName="_abi_docks_dock" >
+			<generatedKey column="id" sqlStatement="select NEXTVAL('_abi_docks_dock_id_seq')" /> 
+		</table>
 		<table tableName="_abi_forms_descr"></table>
 		<table tableName="_abi_forms_form"></table>
 

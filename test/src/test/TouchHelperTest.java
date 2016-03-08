@@ -37,5 +37,21 @@ public class TouchHelperTest extends CommonTestCase {
 	}
 
 	
+	public void testInsertDock() throws Exception {
+		String method = "testInsertDock";
+		
+		try {			
+			
+			
+			getService().insertDock();
+			
+		}catch (Exception e) {
+			
+		}	
+		finally{
+			
+		}
+	}
+	
 
 }
